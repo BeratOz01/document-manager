@@ -1,7 +1,5 @@
 import React from "react";
 
-import Link from "next/link";
-
 const Hero = () => {
   return (
     <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
@@ -19,11 +17,11 @@ const Hero = () => {
         </p>
         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start montserrat">
           <div class="rounded-md shadow">
-            <Link href="/dashboard">
+            <a href="/dashboard">
               <div class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                 Go Dashboard
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
