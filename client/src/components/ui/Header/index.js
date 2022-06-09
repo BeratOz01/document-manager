@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 
 function Header({ account, connect }) {
@@ -16,9 +16,9 @@ function Header({ account, connect }) {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    to="about"
+                    to="hero"
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
                     className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-md font-bold transition duration-750"
                   >
@@ -34,18 +34,7 @@ function Header({ account, connect }) {
                     About
                   </Link>
                   <Link
-                    activeClass="Services"
-                    to="work"
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-md font-bold transition duration-750"
-                  >
-                    Services
-                  </Link>
-                  <Link
-                    activeClass="Services"
-                    to="work"
+                    to="contact"
                     smooth={true}
                     offset={50}
                     duration={500}
