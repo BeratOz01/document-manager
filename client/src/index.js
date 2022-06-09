@@ -7,14 +7,18 @@ import reportWebVitals from "./reportWebVitals";
 import { Web3Provider } from "components/providers";
 import Layout from "components/ui/Layout";
 
+import { AuthContextProvider } from "store/auth-context";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Web3Provider>
-    <Layout>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Layout>
+    <AuthContextProvider>
+      <Layout>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Layout>
+    </AuthContextProvider>
   </Web3Provider>
 );
 
