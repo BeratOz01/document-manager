@@ -9,9 +9,9 @@ function Header({ account, connect }) {
           <div className="flex items-center h-20 w-full">
             <div className="flex items-center  mx-20  justify-between w-full">
               <div className="flex justify-center items-center flex-shrink-0">
-                <h1 className="font-bold text-xl cursor-pointer">
+                <a className="font-bold text-xl cursor-pointer" href="/">
                   Document Manager
-                </h1>
+                </a>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
