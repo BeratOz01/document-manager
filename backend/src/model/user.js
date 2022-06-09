@@ -11,6 +11,14 @@ const userSchema = new mongoose.Schema(
       required: false,
       default: parseInt(Math.floor(Math.random() * 10100001010)),
     },
+    token: {
+      type: String,
+      required: false,
+    },
+    expiresIn: {
+      type: Number,
+      required: false,
+    },
   },
   { timestamps: true }
 );
