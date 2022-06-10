@@ -11,15 +11,15 @@ import { AuthContextProvider } from "store/auth-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Web3Provider>
-    <AuthContextProvider>
+  <AuthContextProvider>
+    <Web3Provider>
       <Layout>
         <React.StrictMode>
           <App />
         </React.StrictMode>
       </Layout>
-    </AuthContextProvider>
-  </Web3Provider>
+    </Web3Provider>
+  </AuthContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

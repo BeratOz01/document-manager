@@ -1,4 +1,5 @@
 import React from "react";
+import { AuthContext } from "store/auth-context";
 
 // SWR
 import useSWR from "swr";
@@ -20,17 +21,19 @@ export const handler = (web3, provider) => () => {
     }
   );
 
+  const authCTX = React.useContext(AuthContext);
+
   React.useEffect(() => {
     const mutator = (accounts) => {
-      localStorage.removeItem("access_token");
       mutate(accounts[0] ?? null);
     };
-    provider?.on("accountsChanged", mutator);
 
-    return () => {
-      provider?.removeListener("accountsChanged", mutator);
-    };
-  }, [mutate]);
+    provider &&
+      provider.on("accountsChanged", (accounts) => {
+        authCTX.logout();
+        mutator(accounts);
+      });
+  }, [mutate, provider]);
 
   return {
     account: {

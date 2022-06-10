@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema(
     address: {
       type: String,
       required: true,
+      unique: true,
     },
     nonce: {
       type: Number,
@@ -15,7 +16,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    expiresIn: {
+    expiresAt: {
       type: Number,
       required: false,
     },
