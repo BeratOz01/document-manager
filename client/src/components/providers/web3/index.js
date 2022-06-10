@@ -9,6 +9,9 @@ import Web3 from "web3";
 // Setup Hooks
 import { setupHooks } from "./hooks/setupHooks";
 
+// Load Contract
+import { loadContract } from "utils/loadContract";
+
 const Web3Context = React.createContext(null);
 
 const createWeb3State = ({ web3, provider, isLoading, contract }) => {
@@ -37,12 +40,13 @@ export default function Web3Provider({ children }) {
 
       if (provider) {
         const web3 = new Web3(provider);
+        const contract = await loadContract("DocumentManager", web3);
         setWeb3Api(
           createWeb3State({
             web3,
             provider,
             isLoading: false,
-            contract: null,
+            contract,
           })
         );
       } else {

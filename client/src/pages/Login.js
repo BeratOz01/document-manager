@@ -41,6 +41,7 @@ const Login = () => {
       .then((resp) => {
         setUser(resp.data.user);
         authCTX.login(resp.data.user.token, resp.data.user.expiresAt);
+        navigate("/dashboard");
       });
   };
 

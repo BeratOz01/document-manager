@@ -44,13 +44,9 @@ contract DocumentManager is Ownable {
     */
     mapping(bytes32 => address[]) private _accessFrom;
 
-
-
-
     // Constructor
     constructor() Ownable() {
     }
-
 
     /**
      * @dev See {IERC721-balanceOf}.
