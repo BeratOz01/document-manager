@@ -27,7 +27,6 @@ export const AuthContextProvider = ({ children }) => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expiresAt");
-    console.log("Logged out");
   };
 
   const contextValue = {
