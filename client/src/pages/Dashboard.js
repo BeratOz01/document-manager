@@ -1,15 +1,10 @@
 import React from "react";
 
-import { useAccount } from "components/hooks";
-import { useWeb3 } from "components/providers";
-
 import MyDocument from "components/ui/MyDocument";
 import UploadDocument from "components/ui/UploadDocument";
+import AllDocuments from "components/ui/AllDocuments";
 
 const Dashboard = () => {
-  const { account } = useAccount();
-  const { web3, contract } = useWeb3();
-
   const [selectedTab, setSelectedTab] = React.useState(0);
 
   const handleSetTab = () => setSelectedTab(1);
@@ -21,7 +16,7 @@ const Dashboard = () => {
           <p
             onClick={() => setSelectedTab(0)}
             className={`inline-block py-3 px-4 ${
-              selectedTab == 0
+              selectedTab === 0
                 ? "active bg-blue-600 rounded-lg text-white"
                 : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
             } `}
@@ -33,7 +28,7 @@ const Dashboard = () => {
           <p
             onClick={() => setSelectedTab(1)}
             className={`inline-block py-3 px-4 ${
-              selectedTab == 1
+              selectedTab === 1
                 ? "active bg-blue-600 rounded-lg text-white"
                 : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
             } `}
@@ -45,7 +40,7 @@ const Dashboard = () => {
           <p
             onClick={() => setSelectedTab(2)}
             className={`inline-block py-3 px-4 ${
-              selectedTab == 2
+              selectedTab === 2
                 ? "active bg-blue-600 rounded-lg text-white"
                 : "rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
             } `}
@@ -55,12 +50,12 @@ const Dashboard = () => {
         </li>
       </ul>
       <div className="flex mt-10 container mx-auto">
-        {selectedTab == 0 ? (
+        {selectedTab === 0 ? (
           <MyDocument handleSetTab={handleSetTab} />
-        ) : selectedTab == 1 ? (
+        ) : selectedTab === 1 ? (
           <UploadDocument />
         ) : (
-          <p>Other</p>
+          <AllDocuments />
         )}
       </div>
     </div>

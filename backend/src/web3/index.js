@@ -31,7 +31,7 @@ contract.events
     const f = await File.findOne({ hash });
     if (!f) return;
 
-    f.allowedAddresses.push(approvedAddress);
+    f.allowedAddresses.push(approvedAddress.toLowerCase());
     await f.save();
   });
 

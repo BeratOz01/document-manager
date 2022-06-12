@@ -44,8 +44,8 @@ const MyDocument = ({ handleSetTab }) => {
         .finally(() => setLoading(false));
     };
 
-    if (account?.data && web3 && contract) fetchData();
-  }, [web3, contract, account?.data]);
+    fetchData();
+  }, []);
 
   return (
     <div className="flex w-full flex-col">

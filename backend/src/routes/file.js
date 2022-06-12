@@ -30,6 +30,27 @@ router.get("/@mine", auth, async (req, res) => {
   }
 });
 
+router.get("/allowed/@me", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (!user) throw new Error("User not found");
+
+    const { address } = user;
+    console.log(address);
+
+    const files = await File.find({ allowedAddresses: address });
+    res.status(200).json({
+      files,
+      msg: "Success",
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).send({
+      msg: "Internal server error",
+    });
+  }
+});
+
 // POST request to create a new file
 router.post("/create", auth, async (req, res) => {
   const { user } = req;
